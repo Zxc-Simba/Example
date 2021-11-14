@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    < metacharset="UTF-8">
+    <title>>Document</title>
 </head>
 <body>
 <?php
@@ -19,7 +19,7 @@ foreach ($arr as $value) {
         array_push($B, $value);
     else array_push($A, $value);
 }
-
+echo "<br>";
 echo "Задание №1 </br>";
 var_dump($A);
 echo "</br>";
@@ -35,7 +35,7 @@ for ($i=0; $i<count($arrNumb)-1; $i++) {
     for ($k=1; $k<count($arrNumb)-$i-1; $k++) {
         $elem1 = $arrNumb[$k];
         $elem2 = $arrNumb[$k+1];
-        if ($elem1>$elem2) {
+        if ($elem1>>$elem2) {
             $arrNumb[$k] = $elem2;
             $arrNumb[$k+1] = $elem1;
         }
@@ -46,14 +46,25 @@ var_dump($arrNumb);
 echo "</br>";
 
 
+echo "Задание 3 </br>";
+function generateName($length){
+    $chars = 'qwertyuiopasdfghjklzxcvbnm';
+    $numChars = strlen($chars);
+    $string = '';
+    for ($i = 0; $i < $length; $i++) {
+        $string .= substr($chars, rand(1, $numChars) - 1, 1);
+    }
+    return $string;
+}
 
 
 
 //Задание 3
-$userName="arnoldschwarzeniggger";
-$lenName=strlen($userName);
-echo "Задание 3 </br>";
-if ($lenName%2===0) {
+$userName = generateName(30);
+$split = str_split($userName);
+$unique = array_unique($split);
+$arrLen = count($unique);
+if ($arrLen%2===0) {
     echo "Girl!";
 }
 else echo "Boy!"
