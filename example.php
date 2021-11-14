@@ -58,12 +58,13 @@ function generateName($length){
 }
 
 
-
 //Задание 3
 $userName = generateName(30);
 $split = str_split($userName);
 $unique = array_unique($split);
 $arrLen = count($unique);
+echo "Сгенерированное имя: " . $userName . "<br>";
+echo "Уникальых символов: " . $arrLen . "<br>";
 if ($arrLen%2===0) {
     echo "Girl!";
 }
